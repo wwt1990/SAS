@@ -1,0 +1,11 @@
+DATA BLOOD;
+   DO I = 1 TO 500;
+      WBC = INT(RANNOR(1368)*2000 + 5000);
+      X = RANUNI(0);
+      IF X LT .05 THEN WBC = .;
+      ELSE IF X LT .1 THEN WBC = WBC - 3000;
+      ELSE IF X LT .15 THEN WBC = WBC + 4000;
+      OUTPUT;
+   END;
+   DROP I X;
+RUN;
